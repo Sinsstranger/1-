@@ -1,0 +1,13 @@
+<?php 
+/**
+ * Вывод доп. поля с текстом над каталогом
+ * [$section_props description]
+ * @var [type]
+ */
+    $section_props = CIBlockSection::GetList(array(), array('IBLOCK_ID' => $arParams['IBLOCK_ID'], 'ID' => $arResult['ID']), 
+                               true, array("UF_TOP_TEXT"));
+    $props_array = $section_props->GetNext();
+    if (isset($props_array["~UF_TOP_TEXT"]) && !empty($props_array["~UF_TOP_TEXT"])) {
+       print_r($props_array["~UF_TOP_TEXT"]);
+    }
+?>
